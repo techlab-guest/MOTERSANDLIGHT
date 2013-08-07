@@ -1,0 +1,23 @@
+#include<Servo.h>
+Servo pan;
+Servo Tom;
+Servo Jerry;
+
+int storage;
+int pos;
+void setup()
+{
+ 
+ 
+ 
+ Tom.attach(9);
+ Jerry.attach(10);
+ Serial.begin(9600);
+}
+
+void loop()
+{ 
+ Tom.write(analogRead(A0));
+ Jerry.write(analogRead(A1));
+ delay(10);
+}
