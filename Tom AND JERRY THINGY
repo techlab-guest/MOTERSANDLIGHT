@@ -1,0 +1,25 @@
+#include<Servo.h>
+Servo Tom;
+Servo Jerry;
+
+int storage;
+int pos;
+void setup()
+{
+ 
+ 
+ 
+ Tom.attach(9);
+ Jerry.attach(10);
+ Serial.begin(9600);
+}
+
+void loop()
+{ 
+ storage = analogRead(A0);
+Serial. println(storage);
+ pos=map(storage,0,140,0,180);
+ Tom.write(pos);
+Jerry.write(pos);
+delay(30);
+}
